@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public enum EnemyType { Melee, Range, Boss, Object, Etc }
@@ -31,12 +33,22 @@ public class Enemy : MonoBehaviour
     public PlayerStats target;
     public Animator animator;
 
+    public ParticleSystem effect;
+
     [Header("발생시킬 아이템")]
     public GameObject[] dropItems;
+
+    public SkinnedMeshRenderer model;
+    Material origin;
+    public Material hitMaterial;
 
 
     void Start()
     {
+        effect = GetComponentInChildren<ParticleSystem>();
+        animator = GetComponentInChildren<Animator>();
+
+        origin = model.material;
         hp = hpMax;
         originalPos = transform.position;
         currentDelay = attackDelay;
@@ -60,7 +72,7 @@ public class Enemy : MonoBehaviour
         }
         #endregion
 
-        attackRange = attackRange * 3;
+        attackRange = attackRange * 2;
 
         InvokeRepeating("SearchTarget", 1, 1);
     }
@@ -71,14 +83,17 @@ public class Enemy : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, target.transform.position);
 
-        if (distance > sightRange) return;
+        if (distance > sightRange)
+        {
+            animator.Play("Idle");
+            return;
+        }
 
         if (distance <= attackRange)
         {
-            //animator.SetBool("IsWalk", false);
             if (currentDelay >= attackDelay)
             {
-                //animator.SetTrigger("Attack");
+                animator.Play("Attack");
                 target.TakeDamage(attackPower);
                 currentDelay = 0;
             }
@@ -87,7 +102,7 @@ public class Enemy : MonoBehaviour
         {
             transform.LookAt(target.transform);
             transform.Translate(0, 0, moveSpeed * Time.deltaTime);
-            //animator.SetBool("IsWalk", true);
+            animator.Play("Move");
         }
 
         currentDelay += Time.deltaTime;
@@ -114,7 +129,9 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        //animator.SetTrigger("Hit");
+        StartCoroutine(hitEffect());
+        animator.Play("TakeDamage");
+        effect.Play();
         hp -= damage;
 
         if (hp <= 0)
@@ -141,6 +158,7 @@ public class Enemy : MonoBehaviour
             {
                 case EnemyType.Object:
                     GameManager.Instance.mission[1].goalObjectCount--;
+                    
                     break;
                 case EnemyType.Etc:
                     DropItem();
@@ -172,6 +190,15 @@ public class Enemy : MonoBehaviour
         UpdateHP();
     }
 
+    public IEnumerator hitEffect()
+    {
+        model.material = hitMaterial;
+
+        yield return new WaitForSeconds(.2f);
+
+        model.material = origin;
+    }
+
     void UpdateHP()
     {
         hpSlider.fillAmount = hp / hpMax;
@@ -186,6 +213,7 @@ public class Enemy : MonoBehaviour
     public void Reset()
     {
         hp = hpMax;
+        model.material = origin;
         isDie = false;
         UpdateHP();
         gameObject.SetActive(true);

@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour
 {
     public PlayerType playerType;
 
+    private Animator animator;
     public Image hpImage;
     public Text hpText;
 
@@ -41,15 +42,20 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
+        animator = GetComponentInChildren<Animator>();
+
         currentHP = maxHP;
         currentMP = maxMP;
         currentExp = maxExp;
 
-        attackRange = attackRange * 3;
+        attackRange = attackRange * 2;
     }
 
     private void Update()
     {
+        if (isDie)
+            return;
+
         hpImage.fillAmount = currentHP / maxHP;
         hpText.text = currentHP.ToString() + "/" + maxHP.ToString();
         mpImage.fillAmount = currentMP / maxMP;
@@ -109,7 +115,7 @@ public class PlayerStats : MonoBehaviour
         if (currentHP <= 0)
         {
             UIManager.Instance.ShowMsgBig(playerType+" : »ç¸Á!");
-            gameObject.SetActive(false);
+            animator.Play("Die");
             currentHP = 0;
             isDie = true;
         }

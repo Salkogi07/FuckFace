@@ -1,14 +1,14 @@
-using System.Security.Cryptography;
+ï»¿using System.Security.Cryptography;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("ÀÌµ¿ ¼³Á¤")]
+    [Header("ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½")]
     public float moveSpeed = 5f;
     public LayerMask groundLayer;
 
-    [Header("AI ¼³Á¤")]
+    [Header("AI ï¿½ï¿½ï¿½ï¿½")]
     public bool isAI = true;
     public float followDistance = 3f;
     public float sightRange = 10f;
@@ -38,10 +38,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (isAI)
         {
-            // AI: Àû Ã£±â
             FindNearestEnemy();
 
-            // AI: Çàµ¿
             if (currentEnemy != null)
             {
                 float distToEnemy = Vector3.Distance(transform.position, currentEnemy.transform.position);
@@ -60,7 +58,6 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (masterPlayer != null)
             {
-                // ÀûÀÌ ¾øÀ¸¸é ¸ÞÀÎÇÃ·¹ÀÌ¾î µû¶ó´Ù´Ï±â
                 float distToMaster = Vector3.Distance(transform.position, masterPlayer.transform.position);
                 if (distToMaster > followDistance)
                 {
@@ -76,7 +73,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            // ÇÃ·¹ÀÌ¾î ÀÔ·Â
             if (Input.GetMouseButtonDown(0))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -92,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 FindNearestEnemy();
 
-                if(currentEnemy != null)
+                if (currentEnemy != null)
                 {
                     float distToEnemy = Vector3.Distance(transform.position, currentEnemy.transform.position);
                     if (distToEnemy <= stats.attackRange)
@@ -118,10 +114,12 @@ public class PlayerMovement : MonoBehaviour
             if (Vector3.Distance(new Vector3(rb.position.x, 0, rb.position.z),
                 new Vector3(targetPosition.x, 0, targetPosition.z)) < 0.5f)
             {
+                animator.Play("Idle");
                 hasTarget = false;
             }
             else
             {
+                animator.Play("Move");
                 rb.velocity = new Vector3(direction.x * moveSpeed, rb.velocity.y, direction.z * moveSpeed);
                 transform.LookAt(new Vector3(targetPosition.x, transform.position.y, targetPosition.z));
             }
@@ -151,18 +149,17 @@ public class PlayerMovement : MonoBehaviour
         if (Time.time >= lastAttackTime + stats.attackCooldown)
         {
             lastAttackTime = Time.time;
-
+            animator.Play("Attack");
             transform.LookAt(new Vector3(currentEnemy.transform.position.x, transform.position.y, currentEnemy.transform.position.z));
             Enemy targetStats = target.GetComponent<Enemy>();
             int damage = stats.attackPower;
 
-            // Å©¸®Æ¼ÄÃ
             if (Random.Range(0f, 100f) <= stats.criticalChance)
                 damage = Mathf.RoundToInt(damage * 1.5f);
 
             targetStats.TakeDamage(damage);
 
-            #region °ø°Ý½Ã °æÇèÄ¡ È¹µæ
+            #region ï¿½ï¿½ï¿½Ý½ï¿½ ï¿½ï¿½ï¿½ï¿½Ä¡ È¹ï¿½ï¿½
             float value;
             if (damage > targetStats.hp)
                 value = targetStats.haveExp * damage / targetStats.hpMax;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageTrigger : MonoBehaviour
+public class TriggerDamage : MonoBehaviour
 {
     public LayerMask targetLayer;
     private BoxCollider boxCollider;

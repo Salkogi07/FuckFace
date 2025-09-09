@@ -48,7 +48,7 @@ public class DamageSkill : BaseSkill
     public float[] power;
     public int[] count;
     public string[] animationName;
-    public DamageTrigger damageTrigger;
+    public TriggerDamage damageTrigger;
 
     public override void Activate(PlayerSkill controller)
     {

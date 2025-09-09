@@ -57,11 +57,11 @@ public class PlayerStats : MonoBehaviour
             return;
 
         hpImage.fillAmount = currentHP / maxHP;
-        hpText.text = currentHP.ToString() + "/" + maxHP.ToString();
+        hpText.text = currentHP.ToString("N1") + "/" + maxHP.ToString("N1");
         mpImage.fillAmount = currentMP / maxMP;
-        mpText.text = currentMP.ToString() + "/" + maxMP.ToString();
+        mpText.text = currentMP.ToString("N1") + "/" + maxMP.ToString("N1");
         expImage.fillAmount = currentExp / maxExp;
-        expText.text = currentExp.ToString() + "/" + maxExp.ToString();
+        expText.text = currentExp.ToString("N1") + "/" + maxExp.ToString("N1");
 
         levelText.text = level.ToString();
 

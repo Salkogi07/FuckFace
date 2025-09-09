@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour
     public float followDistance = 3f;
     public float sightRange = 10f;
 
+    [Header("간격 조절")]
+    public float minDistanceBetweenPlayers = 3f;
+    public float spacingForce = 2f;
+
     private Rigidbody rb;
     private Animator animator;
     private PlayerStats stats;
@@ -115,6 +119,15 @@ public class PlayerMovement : MonoBehaviour
             direction.y = 0;
             direction.Normalize();
 
+            // AI가 마스터 플레이어를 따라가는 중일 때만 간격 조절 적용
+            Vector3 finalDirection = direction;
+            if (isAI && currentEnemy == null && PlayerManager.instance.GetMasterPlayer() != null)
+            {
+                Vector3 spacingOffset = CalculateSpacingOffset();
+                finalDirection = (direction + spacingOffset).normalized;
+            }
+
+
             if (Vector3.Distance(new Vector3(rb.position.x, 0, rb.position.z),
                 new Vector3(targetPosition.x, 0, targetPosition.z)) < 0.5f)
             {
@@ -124,10 +137,34 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 animator.Play("Move");
-                rb.velocity = new Vector3(direction.x * moveSpeed, rb.velocity.y, direction.z * moveSpeed);
+                rb.velocity = new Vector3(finalDirection.x * moveSpeed, rb.velocity.y, finalDirection.z * moveSpeed);
                 transform.LookAt(new Vector3(targetPosition.x, transform.position.y, targetPosition.z));
             }
         }
+    }
+
+    Vector3 CalculateSpacingOffset()
+    {
+        Vector3 spacingOffset = Vector3.zero;
+        GameObject[] allPlayers = GameObject.FindGameObjectsWithTag("Player");
+
+        foreach (GameObject otherPlayer in allPlayers)
+        {
+            if (otherPlayer == this.gameObject) continue;
+
+            Vector3 toOther = otherPlayer.transform.position - transform.position;
+            toOther.y = 0; // Y축 무시
+            float distance = toOther.magnitude;
+
+            if (distance < minDistanceBetweenPlayers && distance > 0.1f)
+            {
+                Vector3 avoidDirection = -toOther.normalized;
+                float pushStrength = (minDistanceBetweenPlayers - distance) / minDistanceBetweenPlayers;
+                spacingOffset += avoidDirection * spacingForce * pushStrength;
+            }
+        }
+
+        return spacingOffset;
     }
 
     void FindNearestEnemy()

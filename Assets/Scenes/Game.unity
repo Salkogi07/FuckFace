@@ -1434,6 +1434,10 @@ PrefabInstance:
       propertyPath: levelText
       value: 
       objectReference: {fileID: 70492359}
+    - target: {fileID: 7301527935568942256, guid: c5987dbf877568f4c94d11dbb59f6c11, type: 3}
+      propertyPath: attackCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7885698205236894128, guid: c5987dbf877568f4c94d11dbb59f6c11, type: 3}
       propertyPath: m_Name
       value: Player Range

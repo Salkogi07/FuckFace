@@ -52,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
+                    animator.Play("Move");
                     targetPosition = currentEnemy.transform.position;
                     hasTarget = true;
                 }
@@ -61,11 +62,13 @@ public class PlayerMovement : MonoBehaviour
                 float distToMaster = Vector3.Distance(transform.position, masterPlayer.transform.position);
                 if (distToMaster > followDistance)
                 {
+                    animator.Play("Move");
                     targetPosition = masterPlayer.transform.position;
                     hasTarget = true;
                 }
                 else
                 {
+                    animator.Play("Idle");
                     hasTarget = false;
                     rb.velocity = Vector3.zero;
                 }
@@ -79,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundLayer))
                 {
+                    animator.Play("Move");
                     targetPosition = hit.point;
                     hasTarget = true;
                 }
@@ -159,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
 
             targetStats.TakeDamage(damage);
 
-            #region ���ݽ� ����ġ ȹ��
+            #region 경험치
             float value;
             if (damage > targetStats.hp)
                 value = targetStats.haveExp * damage / targetStats.hpMax;

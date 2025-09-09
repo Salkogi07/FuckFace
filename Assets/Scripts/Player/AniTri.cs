@@ -13,6 +13,6 @@ public class AniTri : MonoBehaviour
 
     public void StopAnim()
     {
-        animator.SetTrigger("Idle");
+        animator.Play("Idle");
     }
 }

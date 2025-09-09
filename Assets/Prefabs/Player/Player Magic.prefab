@@ -263,7 +263,7 @@ MonoBehaviour:
   currentExp: 0
   attackPower: 10
   attackRange: 3
-  attackCooldown: 0.5
+  attackCooldown: 2
   criticalChance: 0
   level: 0
   skillPoint: 1
@@ -291,6 +291,8 @@ MonoBehaviour:
   isAI: 1
   followDistance: 3
   sightRange: 10
+  minDistanceBetweenPlayers: 3
+  spacingForce: 2
 --- !u!114 &7994003270391619256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,90 +305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542676cdef5a94041b062c132a1672fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 3504455497143397665}
-  skillJobData:
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  skillCommonData:
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
+  damageSkills: []
+  buffSkills: []
 --- !u!1 &7938637118632434656
 GameObject:
   m_ObjectHideFlags: 0

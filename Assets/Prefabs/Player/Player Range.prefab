@@ -263,7 +263,7 @@ MonoBehaviour:
   currentExp: 0
   attackPower: 15
   attackRange: 3
-  attackCooldown: 0.5
+  attackCooldown: 2
   criticalChance: 20
   level: 0
   skillPoint: 1
@@ -305,90 +305,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542676cdef5a94041b062c132a1672fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 2033847450834745490}
-  skillJobData:
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  skillCommonData:
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
+  damageSkills: []
+  buffSkills: []
 --- !u!1 &7938637118632434656
 GameObject:
   m_ObjectHideFlags: 0

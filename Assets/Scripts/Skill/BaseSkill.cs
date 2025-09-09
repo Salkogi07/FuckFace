@@ -77,16 +77,16 @@ public class BuffSkill : BaseSkill
     {
         currentCoolTime[lv] = 0;
         controller.GetPlayerStats().currentMP -= needMP[lv];
-        controller.StartCoroutine(Buffer(3));
+        controller.StartCoroutine(Buffer(controller,3));
 
         UIManager.Instance.ShowMsg(controller.GetPlayerStats().playerType + " : " + name);
     }
 
     #region 아이템 버프
-    public IEnumerator Buffer(float value)
+    public IEnumerator Buffer(PlayerSkill controller, float value)
     {
-        PlayerMovement playerM = PlayerManager.instance.GetMasterPlayer().GetComponent<PlayerMovement>();
-        PlayerStats playerS = PlayerManager.instance.GetMasterPlayer().GetComponent<PlayerStats>();
+        PlayerMovement playerM = controller.main.GetComponent<PlayerMovement>();
+        PlayerStats playerS = controller.main.GetComponent<PlayerStats>();
 
         float origin = 0;
 

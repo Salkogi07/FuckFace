@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerSkill : MonoBehaviour
 {
+    public GameObject main;
     private PlayerStats stats;
     private Animator animator;
 
@@ -11,7 +12,7 @@ public class PlayerSkill : MonoBehaviour
 
     private void Awake()
     {
-        stats = GetComponentInChildren<PlayerStats>();
+        stats = main.GetComponent<PlayerStats>();
         animator = GetComponent<Animator>();
     }
 
@@ -29,7 +30,7 @@ public class PlayerSkill : MonoBehaviour
             skill.Tick();
         }
 
-        if (PlayerManager.instance.GetMasterPlayer() != this.gameObject)
+        if (PlayerManager.instance.GetMasterPlayer() != main)
             return;
 
         #region 스킬 사용

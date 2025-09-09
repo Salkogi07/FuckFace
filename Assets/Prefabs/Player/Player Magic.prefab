@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 2867568100480814176}
   - component: {fileID: 3800005424344207193}
   - component: {fileID: 7301527935568942256}
-  - component: {fileID: 1791139487214008500}
+  - component: {fileID: 1466908251738159768}
   - component: {fileID: 7994003270391619256}
   m_Layer: 6
   m_Name: Player Magic
@@ -272,7 +272,7 @@ MonoBehaviour:
   isGod: 0
   isDie: 0
   isDamage: 0
---- !u!114 &1791139487214008500
+--- !u!114 &1466908251738159768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7885698205236894128}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e2d90738f8603c4cb553851804d917b, type: 3}
+  m_Script: {fileID: 11500000, guid: b4f3b90c97deead43a3bcf434852d561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
@@ -290,9 +290,7 @@ MonoBehaviour:
     m_Bits: 8
   isAI: 1
   followDistance: 3
-  sightRange: 15
-  minDistanceBetweenPlayers: 3
-  spacingForce: 2
+  sightRange: 10
 --- !u!114 &7994003270391619256
 MonoBehaviour:
   m_ObjectHideFlags: 0

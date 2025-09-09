@@ -4,11 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("�̵� ����")]
+    [Header("이동 설정")]
     public float moveSpeed = 5f;
     public LayerMask groundLayer;
 
-    [Header("AI ����")]
+    [Header("AI 설정")]
     public bool isAI = true;
     public float followDistance = 3f;
     public float sightRange = 10f;
@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 targetPosition;
     private bool hasTarget = false;
     private GameObject currentEnemy;
-    private float lastAttackTime;
+    protected float lastAttackTime;
 
     void Awake()
     {
@@ -148,7 +148,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void Attack(GameObject target)
+    public virtual void Attack(GameObject target)
     {
         if (Time.time >= lastAttackTime + stats.attackCooldown)
         {

@@ -11,7 +11,7 @@ public class PlayerSkill : MonoBehaviour
 
     private void Awake()
     {
-        stats = GetComponent<PlayerStats>();
+        stats = GetComponentInChildren<PlayerStats>();
         animator = GetComponent<Animator>();
     }
 
@@ -59,7 +59,7 @@ public class PlayerSkill : MonoBehaviour
 
     public void UseDamageSkill(int index)
     {
-        if (index < 0 || index >= damageSkills.Count) return;
+        if (index < 0 || index > damageSkills.Count) return;
 
         DamageSkill skill = damageSkills[index];
         if (skill.CanUse(stats))
@@ -70,7 +70,7 @@ public class PlayerSkill : MonoBehaviour
 
     public void UseBuffSkill(int index)
     {
-        if (index < 0 || index >= buffSkills.Count) return;
+        if (index < 0 || index > buffSkills.Count) return;
 
         BuffSkill skill = buffSkills[index];
         if (skill.CanUse(stats))

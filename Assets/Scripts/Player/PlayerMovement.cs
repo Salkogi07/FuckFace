@@ -192,7 +192,7 @@ public class PlayerMovement : MonoBehaviour
             animator.Play("Attack");
             transform.LookAt(new Vector3(currentEnemy.transform.position.x, transform.position.y, currentEnemy.transform.position.z));
             Enemy targetStats = target.GetComponent<Enemy>();
-            int damage = stats.attackPower;
+            float damage = stats.attackPower;
 
             if (Random.Range(0f, 100f) <= stats.criticalChance)
                 damage = Mathf.RoundToInt(damage * 1.5f);

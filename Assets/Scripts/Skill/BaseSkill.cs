@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
+using UnityEngine.Playables;
 
 [System.Serializable]
 public abstract class BaseSkill
@@ -48,7 +51,7 @@ public class DamageSkill : BaseSkill
     public float[] power;
     public int[] count;
     public string[] animationName;
-    public TriggerDamage damageTrigger;
+    public TriggerDamageEnemy damageTrigger;
 
     public override void Activate(PlayerSkill controller)
     {
@@ -65,16 +68,74 @@ public class DamageSkill : BaseSkill
 [System.Serializable]
 public class BuffSkill : BaseSkill
 {
-    public enum BuffType { CriticalRate, AttackSpeed }
+    public enum BuffType { CriticalRate, AttackSpeed, Health, MoveSpeed, Damage }
     public BuffType buffType;
     public float[] buffValue;
+    public ParticleSystem partical;
 
     public override void Activate(PlayerSkill controller)
     {
         currentCoolTime[lv] = 0;
         controller.GetPlayerStats().currentMP -= needMP[lv];
+        controller.StartCoroutine(Buffer(3));
 
-        Debug.Log($"{name} 버프 활성화! ({buffType}: +{buffValue[lv]})");
         UIManager.Instance.ShowMsg(controller.GetPlayerStats().playerType + " : " + name);
     }
+
+    #region 아이템 버프
+    public IEnumerator Buffer(float value)
+    {
+        PlayerMovement playerM = PlayerManager.instance.GetMasterPlayer().GetComponent<PlayerMovement>();
+        PlayerStats playerS = PlayerManager.instance.GetMasterPlayer().GetComponent<PlayerStats>();
+
+        float origin = 0;
+
+        switch (buffType)
+        {
+            case BuffType.CriticalRate:
+                partical.Play();
+                origin = playerS.criticalChance;
+                playerS.criticalChance += buffValue[lv];
+                yield return new WaitForSeconds(value);
+                playerS.criticalChance = origin;
+                partical.Stop();
+                break;
+            case BuffType.AttackSpeed:
+                partical.Play();
+                origin = playerS.attackCooldown;
+                playerS.attackCooldown += buffValue[lv];
+                yield return new WaitForSeconds(value);
+                playerS.attackCooldown = origin;
+                partical.Stop();
+                break;
+            case BuffType.Health:
+                partical.Play();
+                origin = playerS.currentHP;
+                playerS .currentHP += buffValue[lv];
+                yield return new WaitForSeconds(value);
+                playerS.attackCooldown = origin;
+                partical.Stop();
+                break;
+            case BuffType.Damage:
+                partical.Play();
+                origin = playerS.attackPower;
+                playerS.attackPower += buffValue[lv];
+                yield return new WaitForSeconds(value);
+                playerS.attackCooldown = origin;
+                partical.Stop();
+                break;
+            case BuffType.MoveSpeed:
+                partical.Play();
+                origin = playerM.moveSpeed;
+                playerM.moveSpeed += buffValue[lv];
+                yield return new WaitForSeconds(value);
+                playerS.attackCooldown = origin;
+                partical.Stop();
+                break;
+            default:
+                yield return null;
+                break;
+        }
+    }
+    #endregion
 }

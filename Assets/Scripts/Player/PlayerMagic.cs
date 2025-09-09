@@ -20,7 +20,7 @@ public class PlayerMagic : PlayerMovement
                 if (dist <= stats.attackRange)
                 {
                     Enemy targetStats = enemy.GetComponent<Enemy>();
-                    int damage = stats.attackPower;
+                    float damage = stats.attackPower;
 
                     if (Random.Range(0f, 100f) <= stats.criticalChance)
                         damage = Mathf.RoundToInt(damage * 1.5f);

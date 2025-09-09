@@ -10087,8 +10087,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   effect: {fileID: 0}
   dropItems: []
-  model: {fileID: 0}
-  hitMaterial: {fileID: 0}
+  model: {fileID: 6629181118016672983}
+  hitMaterial: {fileID: 2100000, guid: 40b7a3247fe43fc4fb6ab44085407161, type: 2}
 --- !u!1 &3502029364074243672
 GameObject:
   m_ObjectHideFlags: 0
@@ -15310,3 +15310,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!137 &6629181118016672983 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8879613000630883526, guid: 11d3d62981300c242bd36d52a8c7ea8f, type: 3}
+  m_PrefabInstance: {fileID: 2361344023187619857}
+  m_PrefabAsset: {fileID: 0}

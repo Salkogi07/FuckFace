@@ -5238,7 +5238,7 @@ MonoBehaviour:
   moveSpeed: 2
   attackDelay: 1
   attackRange: 1
-  sightRange: 10
+  sightRange: 20
   hp: 0
   currentDelay: 0
   isDie: 0
@@ -10027,7 +10027,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ad06186289e12bd46875715ee73fdef8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14859,7 +14859,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ad06186289e12bd46875715ee73fdef8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14903,7 +14903,7 @@ ParticleSystemRenderer:
   m_VertexStreams: 00010304
   m_UseCustomTrailVertexStreams: 0
   m_TrailVertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -14924,7 +14924,7 @@ GameObject:
   - component: {fileID: 7259519337189725639}
   - component: {fileID: 5515196809547256766}
   - component: {fileID: 1779441416407207350}
-  - component: {fileID: 4457146090154309723}
+  - component: {fileID: 3492402535801435324}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -15018,7 +15018,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4457146090154309723
+--- !u!114 &3492402535801435324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15027,7 +15027,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6056201786410192210}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ab54787fe7cb24e9723721e251bc26, type: 3}
+  m_Script: {fileID: 11500000, guid: c5d0636d721c64f459586041a6bbbea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayer:

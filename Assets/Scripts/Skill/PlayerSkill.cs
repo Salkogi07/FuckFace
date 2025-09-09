@@ -29,19 +29,32 @@ public class PlayerSkill : MonoBehaviour
             skill.Tick();
         }
 
+        if (PlayerManager.instance.GetMasterPlayer() != this.gameObject)
+            return;
+
+        #region 스킬 사용
         // 입력 처리 (예시)
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            UseDamageSkill(0);
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            UseDamageSkill(1);
-        }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             UseBuffSkill(0);
         }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            UseBuffSkill(1);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            UseBuffSkill(2);
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            UseBuffSkill(3);
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            UseBuffSkill(4);
+        }
+        #endregion
     }
 
     public void UseDamageSkill(int index)

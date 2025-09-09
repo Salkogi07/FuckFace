@@ -157,7 +157,6 @@ public class GameManager : MonoBehaviour
                     StartCoroutine(SpawnBoss(mission[index].bossObj, 1));
                 }
             }
-            
         }
     }
 

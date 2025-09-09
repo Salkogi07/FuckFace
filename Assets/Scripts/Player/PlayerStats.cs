@@ -27,7 +27,7 @@ public class PlayerStats : MonoBehaviour
 
     public float maxExp, currentExp;
 
-    public int attackPower, attackRange;
+    public float attackPower, attackRange;
         
     public float attackCooldown, criticalChance;
 
@@ -53,8 +53,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        if (isDie)
-            return;
+        #region UI 업데이트 용
 
         hpImage.fillAmount = currentHP / maxHP;
         hpText.text = currentHP.ToString("N1") + "/" + maxHP.ToString("N1");
@@ -63,7 +62,11 @@ public class PlayerStats : MonoBehaviour
         expImage.fillAmount = currentExp / maxExp;
         expText.text = currentExp.ToString("N1") + "/" + maxExp.ToString("N1");
 
+        if (isDie)
+            return;
+
         levelText.text = level.ToString();
+        #endregion
 
         if (!isDamage)
         {

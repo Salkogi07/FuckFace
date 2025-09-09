@@ -48,7 +48,8 @@ public class Enemy : MonoBehaviour
         effect = GetComponentInChildren<ParticleSystem>();
         animator = GetComponentInChildren<Animator>();
 
-        origin = model.material;
+        if (eType != EnemyType.Object)
+            origin = model.material;
         hp = hpMax;
         originalPos = transform.position;
         currentDelay = attackDelay;
@@ -129,7 +130,9 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        StartCoroutine(hitEffect());
+        if(eType != EnemyType.Object)
+            StartCoroutine(hitEffect());
+
         animator.Play("TakeDamage");
         effect.Play();
         hp -= damage;
@@ -158,7 +161,6 @@ public class Enemy : MonoBehaviour
             {
                 case EnemyType.Object:
                     GameManager.Instance.mission[1].goalObjectCount--;
-                    
                     break;
                 case EnemyType.Etc:
                     DropItem();

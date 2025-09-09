@@ -10087,8 +10087,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   effect: {fileID: 0}
   dropItems: []
-  model: {fileID: 0}
-  hitMaterial: {fileID: 0}
+  model: {fileID: 3108633398307936612}
+  hitMaterial: {fileID: 2100000, guid: 40b7a3247fe43fc4fb6ab44085407161, type: 2}
 --- !u!1 &4195374100983639400
 GameObject:
   m_ObjectHideFlags: 0
@@ -15279,6 +15279,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 5087537177834593653}
   m_SourcePrefab: {fileID: 100100000, guid: 11d3d62981300c242bd36d52a8c7ea8f, type: 3}
+--- !u!137 &3108633398307936612 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8879613000630883526, guid: 11d3d62981300c242bd36d52a8c7ea8f, type: 3}
+  m_PrefabInstance: {fileID: 5773242405910482338}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6310691089019398729 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 11d3d62981300c242bd36d52a8c7ea8f, type: 3}

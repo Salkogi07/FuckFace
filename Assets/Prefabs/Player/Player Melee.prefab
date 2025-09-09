@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 104859469933512514}
   - component: {fileID: 114219872685786978}
   - component: {fileID: 3577259883201686486}
+  - component: {fileID: 7354693926122289192}
   m_Layer: 6
   m_Name: skill
   m_TagString: Untagged
@@ -139,6 +140,7 @@ Transform:
   - {fileID: 5973779188294694572}
   - {fileID: 5256101212490172333}
   - {fileID: 2500417391545289654}
+  - {fileID: 1238028760756965881}
   m_Father: {fileID: 2663633071630496148}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &114219872685786978
@@ -174,6 +176,113 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2cbe9a389108849865eea227989d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7354693926122289192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944061125968225410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542676cdef5a94041b062c132a1672fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageSkills:
+  - name: "\uCC0C\uB974\uAE30"
+    lv: 0
+    coolTime:
+    - 3
+    - 3
+    - 2
+    - 2
+    - 2
+    currentCoolTime:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    needMP:
+    - 10
+    - 11
+    - 12
+    - 13
+    - 15
+    power:
+    - 120
+    - 140
+    - 160
+    - 180
+    - 200
+    count: 0100000001000000010000000100000001000000
+    animationName:
+    - skill1
+    - skill1
+    - skill1
+    - skill1
+    - skill1
+    damageTrigger: {fileID: 1033307719645040628}
+  buffSkills:
+  - name: "\uD06C\uB9AC\uD2F0\uCEEC \uD655\uB960 \uC99D\uAC00"
+    lv: 0
+    coolTime:
+    - 10
+    - 10
+    - 10
+    - 10
+    - 10
+    currentCoolTime:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    needMP:
+    - 20
+    - 20
+    - 20
+    - 20
+    - 20
+    buffType: 0
+    buffValue:
+    - 10
+    - 20
+    - 30
+    - 40
+    - 50
+    partical: {fileID: 0}
+--- !u!1 &1930254940976412564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1238028760756965881}
+  m_Layer: 6
+  m_Name: partical
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1238028760756965881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930254940976412564}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 104859469933512514}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2605797702304561311
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +389,6 @@ GameObject:
   - component: {fileID: 2897740270631015531}
   - component: {fileID: 7126799938766492825}
   - component: {fileID: 8169797645613997287}
-  - component: {fileID: 57733300188075965}
   m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -375,24 +483,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &57733300188075965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3388217975263650957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ab54787fe7cb24e9723721e251bc26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  damage: 0
-  count: 0
-  i: 0
 --- !u!1 &3472622090311954291
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +495,6 @@ GameObject:
   - component: {fileID: 5776424995017116396}
   - component: {fileID: 6412428099887244988}
   - component: {fileID: 9109198689624003449}
-  - component: {fileID: 7750279175239394229}
   m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
@@ -500,24 +589,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7750279175239394229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3472622090311954291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ab54787fe7cb24e9723721e251bc26, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  damage: 0
-  count: 0
-  i: 0
 --- !u!1 &7885698205236894128
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,7 +602,6 @@ GameObject:
   - component: {fileID: 3800005424344207193}
   - component: {fileID: 7301527935568942256}
   - component: {fileID: 1791139487214008500}
-  - component: {fileID: 8567297060552706545}
   m_Layer: 6
   m_Name: Player Melee
   m_TagString: Player
@@ -662,219 +732,8 @@ MonoBehaviour:
   isAI: 1
   followDistance: 3
   sightRange: 15
---- !u!114 &8567297060552706545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7885698205236894128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 542676cdef5a94041b062c132a1672fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 114219872685786978}
-  skillJobData:
-  - name: "\uD380\uCE58"
-    lv: 0
-    coolTIme:
-    - 3
-    - 3
-    - 2
-    - 2
-    - 2
-    currentCoolTIme:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    needMP:
-    - 12
-    - 15
-    - 18
-    - 20
-    - 22
-    power:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    count: 0200000003000000030000000400000005000000
-    animationName: skill2
-    damageTriggers: {fileID: 57733300188075965}
-  - name: "\uCC0C\uB974\uAE30"
-    lv: 0
-    coolTIme:
-    - 0
-    - 3
-    - 3
-    - 2
-    - 2
-    - 2
-    currentCoolTIme:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    needMP:
-    - 0
-    - 10
-    - 11
-    - 12
-    - 13
-    - 15
-    power:
-    - 0
-    - 120
-    - 140
-    - 160
-    - 180
-    - 200
-    count: 000000000100000001000000010000000100000001000000
-    animationName: skill1
-    damageTriggers: {fileID: 2026156281936637593}
-  - name: "\uD380\uCE58"
-    lv: 0
-    coolTIme:
-    - 0
-    - 3
-    - 3
-    - 2
-    - 2
-    - 2
-    currentCoolTIme:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    needMP:
-    - 0
-    - 12
-    - 15
-    - 18
-    - 20
-    - 22
-    power:
-    - 0
-    - 100
-    - 120
-    - 120
-    - 140
-    - 140
-    count: 000000000200000003000000030000000400000005000000
-    animationName: skill2
-    damageTriggers: {fileID: 7750279175239394229}
-  - name: "\uD380\uCE58"
-    lv: 0
-    coolTIme:
-    - 3
-    - 3
-    - 2
-    - 2
-    - 2
-    currentCoolTIme:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    needMP:
-    - 12
-    - 15
-    - 18
-    - 20
-    - 22
-    power:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    count: 0200000003000000030000000400000005000000
-    animationName: skill2
-    damageTriggers: {fileID: 57733300188075965}
-  - name: "\uD380\uCE58"
-    lv: 0
-    coolTIme:
-    - 3
-    - 3
-    - 2
-    - 2
-    - 2
-    currentCoolTIme:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    needMP:
-    - 12
-    - 15
-    - 18
-    - 20
-    - 22
-    power:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    count: 0200000003000000030000000400000005000000
-    animationName: skill2
-    damageTriggers: {fileID: 57733300188075965}
-  skillCommonData:
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
-  - name: 
-    lv: 0
-    coolTIme: []
-    currentCoolTIme: []
-    needMP: []
-    power: []
-    count: 
-    animationName: 
-    damageTriggers: {fileID: 0}
+  minDistanceBetweenPlayers: 3
+  spacingForce: 2
 --- !u!1 &7938637118632434656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,7 +1004,7 @@ PrefabInstance:
       addedObject: {fileID: 1805837779630436898}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e6832340d2d279c4fb1d9f7bc9f882f2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2026156281936637593}
+      addedObject: {fileID: 1033307719645040628}
   m_SourcePrefab: {fileID: 100100000, guid: e6832340d2d279c4fb1d9f7bc9f882f2, type: 3}
 --- !u!4 &5973779188294694572 stripped
 Transform:
@@ -1178,7 +1037,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.2, y: 0.8874701, z: 0.2212888}
   m_Center: {x: -0.00000030547398, y: 0.29357186, z: -0.0000003568404}
---- !u!114 &2026156281936637593
+--- !u!114 &1033307719645040628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1187,7 +1046,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6461803628253244438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22ab54787fe7cb24e9723721e251bc26, type: 3}
+  m_Script: {fileID: 11500000, guid: 05e1d91ab317659498ae6c7ca27120e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetLayer:

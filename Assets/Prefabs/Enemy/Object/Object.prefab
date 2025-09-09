@@ -150,6 +150,8 @@ MonoBehaviour:
   animator: {fileID: 0}
   effect: {fileID: 0}
   dropItems: []
+  model: {fileID: 0}
+  hitMaterial: {fileID: 2100000, guid: 40b7a3247fe43fc4fb6ab44085407161, type: 2}
 --- !u!1 &3882349491314168095
 GameObject:
   m_ObjectHideFlags: 0

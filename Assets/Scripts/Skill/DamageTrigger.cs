@@ -48,4 +48,12 @@ public class DamageTrigger : MonoBehaviour
             i++;
         }
     }
+
+    public void SetAttack(float damage, int count)
+    {
+        i = 0;
+        this.damage = damage;
+        this.count = count;
+    }
+
 }

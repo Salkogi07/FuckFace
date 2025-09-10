@@ -15186,8 +15186,8 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
-  damage: 100
-  count: 100
+  damage: 30
+  count: 3
   i: 0
 --- !u!1 &6388892658620467178
 GameObject:

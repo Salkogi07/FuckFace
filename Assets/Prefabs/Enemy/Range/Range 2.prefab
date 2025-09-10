@@ -5196,7 +5196,13 @@ MonoBehaviour:
   target: {fileID: 0}
   animator: {fileID: 0}
   effect: {fileID: 0}
-  dropItems: []
+  dropItems:
+  - {fileID: 1473163213934858142, guid: 314656fa33f9b834a84f1952cd790621, type: 3}
+  - {fileID: 1473163213934858142, guid: 65b06c1eedc995f41a5aeff59b5336c0, type: 3}
+  - {fileID: 1473163213934858142, guid: d49003dc2627b6e449b7902ec6e318ac, type: 3}
+  - {fileID: 1473163213934858142, guid: 66f5706ed107bbd4a9e7859ae05e49d1, type: 3}
+  - {fileID: 1473163213934858142, guid: 620cd00c7300bf64dbd7693472c90ea9, type: 3}
+  spawnRate: 10
   model: {fileID: 1382872210552186104}
   hitMaterial: {fileID: 2100000, guid: 40b7a3247fe43fc4fb6ab44085407161, type: 2}
 --- !u!1 &3642945216548648628

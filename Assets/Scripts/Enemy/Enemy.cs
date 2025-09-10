@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
 
     [Header("발생시킬 아이템")]
     public GameObject[] dropItems;
+    public float spawnRate;
 
     public SkinnedMeshRenderer model;
     Material origin;
@@ -208,8 +209,12 @@ public class Enemy : MonoBehaviour
 
     void DropItem()
     {
-        /*int randomResult = Random.Range(0, dropItems.Length);
-        Destroy(Instantiate(dropItems[randomResult], transform.position, Quaternion.identity), 5f);*/
+        int random = Random.Range(0, 100);
+        if(spawnRate > random)
+        {
+            int randomResult = Random.Range(0, dropItems.Length);
+            Destroy(Instantiate(dropItems[randomResult], transform.position, Quaternion.identity), 5f);
+        }
     }
 
     public void Reset()

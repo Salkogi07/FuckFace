@@ -15,8 +15,8 @@ TagManager:
   - Player
   - Enemy
   - miniMap
-  - 
-  - 
+  - Item
+  - ItemObject
   - 
   - 
   - 

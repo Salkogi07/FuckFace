@@ -27,5 +27,5 @@ public class BossSkill1 : MonoBehaviour
         }
     }
 
-    private float RandomWait() => Random.Range(1, 3);
+    private float RandomWait() => Random.Range(5, 10);
 }

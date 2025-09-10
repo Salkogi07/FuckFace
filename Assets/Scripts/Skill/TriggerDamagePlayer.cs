@@ -17,6 +17,11 @@ public class TriggerDamagePlayer : MonoBehaviour
         boxCollider = GetComponent<BoxCollider>();
     }
 
+    private void OnEnable()
+    {
+        i = 0;
+    }
+
     private void Update()
     {
         AttackInBox();
@@ -35,6 +40,7 @@ public class TriggerDamagePlayer : MonoBehaviour
             PlayerStats enemy = hit.GetComponentInParent<PlayerStats>();
             if (enemy != null)
             {
+                Debug.Log(enemy.name);
                 uniqueEnemies.Add(enemy);
             }
         }
@@ -45,14 +51,8 @@ public class TriggerDamagePlayer : MonoBehaviour
         {
             if (i >= attackCount) break;
             enemy.TakeDamage(damage);
+            Debug.Log(enemy.name);
             i++;
         }
-    }
-
-    public void SetAttack(float damage, int count)
-    {
-        i = 0;
-        this.damage = damage;
-        this.count = count;
     }
 }

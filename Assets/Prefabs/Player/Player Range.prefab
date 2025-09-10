@@ -15335,7 +15335,6 @@ GameObject:
   - component: {fileID: 3800005424344207193}
   - component: {fileID: 7301527935568942256}
   - component: {fileID: 1791139487214008500}
-  - component: {fileID: 2891489073265718935}
   m_Layer: 6
   m_Name: Player Range
   m_TagString: Player
@@ -15468,21 +15467,6 @@ MonoBehaviour:
   sightRange: 15
   minDistanceBetweenPlayers: 3
   spacingForce: 2
---- !u!114 &2891489073265718935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7885698205236894128}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 542676cdef5a94041b062c132a1672fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  main: {fileID: 0}
-  damageSkills: []
-  buffSkills: []
 --- !u!1 &7938637118632434656
 GameObject:
   m_ObjectHideFlags: 0

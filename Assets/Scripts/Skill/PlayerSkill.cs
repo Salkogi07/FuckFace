@@ -37,7 +37,10 @@ public class PlayerSkill : MonoBehaviour
             skill.Tick();
         }
 
-        for(int i = 0; i < damageSkills.Count; i++)
+        if (PlayerManager.instance.GetMasterPlayer() != main)
+            return;
+
+        for (int i = 0; i < damageSkills.Count; i++)
         {
             DamageSkill skill = damageSkills[i];
             int lv = skill.lv;
@@ -65,9 +68,6 @@ public class PlayerSkill : MonoBehaviour
             else
                 CmskillCool[i].fillAmount = 0;
         }
-
-        if (PlayerManager.instance.GetMasterPlayer() != main)
-            return;
 
         #region 스킬 사용
         // 입력 처리 (예시)

@@ -121,7 +121,7 @@ public class SimpleInventory : MonoBehaviour
             }
             else
             {
-                itemSlotTexts[i].text = "- 비어있음 -";
+                itemSlotTexts[i].text = "비어있음";
             }
         }
     }

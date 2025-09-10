@@ -16,9 +16,9 @@ public abstract class BaseSkill
     public virtual void Tick()
     {
         if (lv <= 0) return;
-        if (currentCoolTime[lv] < coolTime[lv])
+        if (currentCoolTime[lv] > 0)
         {
-            currentCoolTime[lv] += Time.deltaTime;
+            currentCoolTime[lv] -= Time.deltaTime;
         }
     }
 
@@ -34,7 +34,7 @@ public abstract class BaseSkill
             Debug.Log("마나가 부족합니다.");
             return false;
         }
-        if (currentCoolTime[lv] < coolTime[lv])
+        if (currentCoolTime[lv] > 0)
         {
             Debug.Log("쿨타임 중입니다.");
             return false;
@@ -55,7 +55,7 @@ public class DamageSkill : BaseSkill
 
     public override void Activate(PlayerSkill controller)
     {
-        currentCoolTime[lv] = 0;
+        currentCoolTime[lv] = coolTime[lv];
         controller.GetPlayerStats().currentMP -= needMP[lv];
 
         damageTrigger.SetAttack(power[lv], count[lv]);
@@ -75,7 +75,7 @@ public class BuffSkill : BaseSkill
 
     public override void Activate(PlayerSkill controller)
     {
-        currentCoolTime[lv] = 0;
+        currentCoolTime[lv] = coolTime[lv];
         controller.GetPlayerStats().currentMP -= needMP[lv];
         controller.StartCoroutine(Buffer(controller,3));
 

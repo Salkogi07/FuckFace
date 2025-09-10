@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerSkill : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class PlayerSkill : MonoBehaviour
 
     public List<DamageSkill> damageSkills = new List<DamageSkill>();
     public List<BuffSkill> buffSkills = new List<BuffSkill>();
+
+    public Text[] skillNameText;
+    public Image[] skillCool;
+
+    public Text[] CmskillNameText;
+    public Image[] CmskillCool;
 
     private void Awake()
     {
@@ -28,6 +35,35 @@ public class PlayerSkill : MonoBehaviour
         foreach (var skill in buffSkills)
         {
             skill.Tick();
+        }
+
+        for(int i = 0; i < damageSkills.Count; i++)
+        {
+            DamageSkill skill = damageSkills[i];
+            int lv = skill.lv;
+            float fill = skill.currentCoolTime[lv] / skill.coolTime[lv];
+
+            skillNameText[i].text = skill.name;
+
+            if(skill.currentCoolTime[lv] > 0)
+                skillCool[i].fillAmount = fill;
+            else
+                skillCool[i].fillAmount = 0;
+
+        }
+
+        for (int i = 0; i < buffSkills.Count; i++)
+        {
+            BuffSkill skill = buffSkills[i];
+            int lv = skill.lv;
+            float fill = skill.currentCoolTime[lv] / skill.coolTime[lv];
+
+            CmskillNameText[i].text = skill.name;
+
+            if (skill.currentCoolTime[lv] > 0)
+                CmskillCool[i].fillAmount = fill;
+            else
+                CmskillCool[i].fillAmount = 0;
         }
 
         if (PlayerManager.instance.GetMasterPlayer() != main)

@@ -254,11 +254,11 @@ MonoBehaviour:
     - 20
     buffType: 0
     buffValue:
+    - 0
     - 10
     - 20
     - 30
     - 40
-    - 50
     - 50
     partical: {fileID: 7657183659507768335}
   - name: "\uACF5\uACA9 \uC18D\uB3C4 \uC99D\uAC00"
@@ -287,12 +287,12 @@ MonoBehaviour:
     - 20
     buffType: 1
     buffValue:
+    - 0
     - -0.1
     - -0.3
     - -0.5
     - -0.7
-    - 50
-    - 50
+    - -1
     partical: {fileID: 4838659760131995833}
   - name: "\uCCB4\uB825 \uC99D\uAC00"
     lv: 0
@@ -320,11 +320,11 @@ MonoBehaviour:
     - 20
     buffType: 2
     buffValue:
+    - 0
     - 200
     - 400
     - 600
     - 800
-    - 1000
     - 1000
     partical: {fileID: 4567451127120382924}
   - name: "\uC774\uB3D9\uC18D\uB3C4 \uC99D\uAC00"
@@ -353,11 +353,11 @@ MonoBehaviour:
     - 20
     buffType: 3
     buffValue:
+    - 0
     - 0.1
     - 0.3
     - 0.5
     - 0.7
-    - 1
     - 1
     partical: {fileID: 2845843850236090600}
   - name: "\uACF5\uACA9\uB825 \uC99D\uAC00"
@@ -386,11 +386,11 @@ MonoBehaviour:
     - 20
     buffType: 4
     buffValue:
+    - 0
     - 20
     - 40
     - 60
     - 80
-    - 100
     - 100
     partical: {fileID: 2791151905140200541}
   skillui:

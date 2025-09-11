@@ -114,7 +114,7 @@ public class BuffSkill : BaseSkill
                 origin = playerS.currentHP;
                 playerS .currentHP += buffValue[lv];
                 yield return new WaitForSeconds(value);
-                playerS.attackCooldown = origin;
+                playerS.currentHP = origin;
                 partical.Stop();
                 break;
             case BuffType.Damage:
@@ -122,7 +122,7 @@ public class BuffSkill : BaseSkill
                 origin = playerS.attackPower;
                 playerS.attackPower += buffValue[lv];
                 yield return new WaitForSeconds(value);
-                playerS.attackCooldown = origin;
+                playerS.attackPower = origin;
                 partical.Stop();
                 break;
             case BuffType.MoveSpeed:
@@ -130,7 +130,7 @@ public class BuffSkill : BaseSkill
                 origin = playerM.moveSpeed;
                 playerM.moveSpeed += buffValue[lv];
                 yield return new WaitForSeconds(value);
-                playerS.attackCooldown = origin;
+                playerM.moveSpeed = origin;
                 partical.Stop();
                 break;
             default:

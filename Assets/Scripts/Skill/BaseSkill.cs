@@ -27,17 +27,17 @@ public abstract class BaseSkill
     {
         if (lv <= 0)
         {
-            Debug.LogWarning($"{name} 스킬의 레벨이 0 이하여서 사용할 수 없습니다.");
+            UIManager.Instance.ShowMsg($"{name} 스킬의 레벨이 0 이하여서 사용할 수 없습니다.");
             return false;
         }
         if (stats.currentMP < needMP[lv])
         {
-            Debug.Log("마나가 부족합니다.");
+            UIManager.Instance.ShowMsg("마나가 부족합니다.");
             return false;
         }
         if (currentCoolTime[lv] > 0)
         {
-            Debug.Log("쿨타임 중입니다.");
+            UIManager.Instance.ShowMsg("쿨타임 중입니다.");
             return false;
         }
         return true;

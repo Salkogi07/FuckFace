@@ -5275,7 +5275,7 @@ MonoBehaviour:
   eType: 2
   enemyGrade: 3
   haveExp: 0
-  hpMax: 10000
+  hpMax: 100000
   attackPower: 50
   moveSpeed: 2
   attackDelay: 1
@@ -5290,6 +5290,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   effect: {fileID: 0}
   dropItems: []
+  spawnRate: 0
   model: {fileID: 6279882279189435565}
   hitMaterial: {fileID: 2100000, guid: 40b7a3247fe43fc4fb6ab44085407161, type: 2}
 --- !u!1 &5620650867473334877

@@ -3933,7 +3933,7 @@ PrefabInstance:
       objectReference: {fileID: 1689748666}
     - target: {fileID: 7301527935568942256, guid: c5987dbf877568f4c94d11dbb59f6c11, type: 3}
       propertyPath: attackCooldown
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7439563737972747768, guid: c5987dbf877568f4c94d11dbb59f6c11, type: 3}
       propertyPath: itemSlotTexts.Array.size
@@ -9971,6 +9971,10 @@ PrefabInstance:
       propertyPath: levelText
       value: 
       objectReference: {fileID: 1328069188}
+    - target: {fileID: 7301527935568942256, guid: f7ae8b9151a70f44e84513da7a8cca93, type: 3}
+      propertyPath: attackCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7769873892087179689, guid: f7ae8b9151a70f44e84513da7a8cca93, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -16104,6 +16108,10 @@ PrefabInstance:
       propertyPath: levelText
       value: 
       objectReference: {fileID: 1549265007}
+    - target: {fileID: 7301527935568942256, guid: d3474f8b6bca50e4ea0832c749b31af0, type: 3}
+      propertyPath: attackCooldown
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7354693926122289192, guid: d3474f8b6bca50e4ea0832c749b31af0, type: 3}
       propertyPath: skillPanel
       value: 

@@ -179,7 +179,7 @@ public class PlayerSkill : MonoBehaviour
 
         DamageSkill skill = damageSkills[index];
 
-        if (stats.skillPoint > 0 && skill.lv <= skill.maxLevel)
+        if (stats.skillPoint > 0 && skill.lv < skill.maxLevel)
         {
             stats.skillPoint--;
             skill.lv++;
@@ -200,7 +200,7 @@ public class PlayerSkill : MonoBehaviour
 
         BuffSkill skill = buffSkills[index];
 
-        if (stats.skillPoint > 0 && skill.lv <= skill.maxLevel)
+        if (stats.skillPoint > 0 && skill.lv < skill.maxLevel)
         {
             stats.skillPoint--;
             skill.lv++;

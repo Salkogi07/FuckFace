@@ -39,8 +39,13 @@ public class SimpleInventory : MonoBehaviour
     void Update()
     {
         if (currentCooldown > 0)
-        {
             currentCooldown -= Time.deltaTime;
+
+        if (PlayerManager.instance.GetMasterPlayer() != this.gameObject)
+            return;
+
+        if (currentCooldown > 0)
+        {
             float fill = currentCooldown / itemCooldown;
             foreach (Image img in cooldownImages)
             {
@@ -54,9 +59,6 @@ public class SimpleInventory : MonoBehaviour
                 img.fillAmount = 0;
             }
         }
-
-        if (PlayerManager.instance.GetMasterPlayer() != this.gameObject)
-            return;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

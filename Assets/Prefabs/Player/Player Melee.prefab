@@ -189,9 +189,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 7885698205236894128}
+  skillPoint: {fileID: 0}
+  skillPanel: {fileID: 0}
   damageSkills:
   - name: "\uCC0C\uB974\uAE30"
     lv: 0
+    maxLevel: 5
     coolTime:
     - 3
     - 3
@@ -227,6 +230,7 @@ MonoBehaviour:
   buffSkills:
   - name: "\uD06C\uB9AC\uD2F0\uCEEC \uD655\uB960 \uC99D\uAC00"
     lv: 0
+    maxLevel: 5
     coolTime:
     - 10
     - 10
@@ -259,6 +263,7 @@ MonoBehaviour:
     partical: {fileID: 7657183659507768335}
   - name: "\uACF5\uACA9 \uC18D\uB3C4 \uC99D\uAC00"
     lv: 0
+    maxLevel: 5
     coolTime:
     - 10
     - 10
@@ -291,6 +296,7 @@ MonoBehaviour:
     partical: {fileID: 4838659760131995833}
   - name: "\uCCB4\uB825 \uC99D\uAC00"
     lv: 0
+    maxLevel: 5
     coolTime:
     - 10
     - 10
@@ -323,6 +329,7 @@ MonoBehaviour:
     partical: {fileID: 4567451127120382924}
   - name: "\uC774\uB3D9\uC18D\uB3C4 \uC99D\uAC00"
     lv: 0
+    maxLevel: 5
     coolTime:
     - 10
     - 10
@@ -355,6 +362,7 @@ MonoBehaviour:
     partical: {fileID: 2845843850236090600}
   - name: "\uACF5\uACA9\uB825 \uC99D\uAC00"
     lv: 0
+    maxLevel: 5
     coolTime:
     - 10
     - 10
@@ -385,6 +393,18 @@ MonoBehaviour:
     - 100
     - 100
     partical: {fileID: 2791151905140200541}
+  skillui:
+    skillNameText: []
+    skillCool: []
+    upSkillName: []
+    upSkillLv: []
+    upbuttons: []
+  Cmskillui:
+    skillNameText: []
+    skillCool: []
+    upSkillName: []
+    upSkillLv: []
+    upbuttons: []
 --- !u!1 &1523192674890579068
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public abstract class BaseSkill
 {
     public string name;
     public int lv;
+    public int maxLevel;
 
     public float[] coolTime;
     public float[] currentCoolTime;

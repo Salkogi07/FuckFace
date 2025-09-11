@@ -16045,6 +16045,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 582159963}
     - target: {fileID: 4397019683720823940, guid: d3474f8b6bca50e4ea0832c749b31af0, type: 3}
+      propertyPath: itemSlotTexts.Array.data[4]
+      value: 
+      objectReference: {fileID: 1658572588}
+    - target: {fileID: 4397019683720823940, guid: d3474f8b6bca50e4ea0832c749b31af0, type: 3}
+      propertyPath: itemSlotTexts.Array.data[5]
+      value: 
+      objectReference: {fileID: 2141824126}
+    - target: {fileID: 4397019683720823940, guid: d3474f8b6bca50e4ea0832c749b31af0, type: 3}
+      propertyPath: itemSlotTexts.Array.data[6]
+      value: 
+      objectReference: {fileID: 411073815}
+    - target: {fileID: 4397019683720823940, guid: d3474f8b6bca50e4ea0832c749b31af0, type: 3}
+      propertyPath: itemSlotTexts.Array.data[7]
+      value: 
+      objectReference: {fileID: 582159963}
+    - target: {fileID: 4397019683720823940, guid: d3474f8b6bca50e4ea0832c749b31af0, type: 3}
       propertyPath: cooldownImages.Array.data[0]
       value: 
       objectReference: {fileID: 496239843}

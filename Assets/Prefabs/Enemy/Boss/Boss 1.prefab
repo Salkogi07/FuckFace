@@ -5401,6 +5401,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   effect: {fileID: 0}
   dropItems: []
+  spawnRate: 0
   model: {fileID: 8521053983729011775}
   hitMaterial: {fileID: 2100000, guid: 40b7a3247fe43fc4fb6ab44085407161, type: 2}
 --- !u!1 &4602847002587151953
